@@ -1,9 +1,7 @@
 let pokemon;
 let url;
-let img;
 let pokemon2;
 let url2;
-let img2;
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", getInfo);
 
@@ -30,16 +28,16 @@ async function getInfo() {
 }
 
 function renderHTML(data) {
-  document.querySelector(".image").src = data.sprites.front_default;
+  document.querySelector(".image").src = data.sprites.other.dream_world.front_default;
   console.log("works", data.sprites.front_default);
   document.querySelector(".headline").innerHTML = data.name;
   document.querySelector(".hp").innerHTML = "HP: " + data.stats[0].base_stat;
-  console.log("pokemon", pokemon);
+  console.log("pokemon", data);
 }
 function renderHTML2(data2) {
-  document.querySelector(".image2").src = data2.sprites.front_default;
+  document.querySelector(".image2").src = data2.sprites.other.dream_world.front_default;
   console.log("works", data2.sprites.front_default);
   document.querySelector(".headline2").innerHTML = data2.name;
   document.querySelector(".hp2").innerHTML = "HP: " + data2.stats[0].base_stat;
-  console.log("pokemon", pokemon);
+  console.log("pokemon2", data2);
 }
